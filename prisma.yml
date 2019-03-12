@@ -1,0 +1,6 @@
+endpoint: http://${env:HOST}:${env:PORT}/${env:SERVICE_NAME}/${env:STAGE}
+datamodel: datamodel.prisma
+
+generate:
+  - generator: typescript-client
+    output: ./src/prisma-client/

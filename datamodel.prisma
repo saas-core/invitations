@@ -1,0 +1,19 @@
+type User {
+  id: ID! @unique
+  resourceId: ID!
+  name: String
+  email: String
+  phoneNumber: String
+}
+
+type Invitation {
+  id: ID! @unique
+  sender: User!
+  resourceId: ID!
+  recipient: User!
+  createdAt: DateTime!
+  acceptedAt: DateTime
+  accepted: Boolean
+  expiredAt: DateTime
+  expired: Boolean @default("false")
+}
